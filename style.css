@@ -1,5 +1,17 @@
 body {
 	font-family: 'Roboto', sans-serif;
+	background: #8e2de2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#4a00e0,
+		#8e2de2
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#4a00e0,
+		#8e2de2
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
 }
 
 .list {
@@ -11,6 +23,8 @@ body {
 }
 
 .card {
+	background-color: white;
+	color: black;
 	height: auto;
 	width: 100%;
 	border-radius: 10px;
@@ -31,8 +45,8 @@ body {
 button {
 	border-radius: 5px;
 	background-color: white;
-	border: 1px solid black;
 	outline: none;
+	border: none;
 	width: 100px;
 	height: 30px;
 	cursor: pointer;
