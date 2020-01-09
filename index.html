@@ -50,7 +50,16 @@
 			}
 
 			function obtenerData() {
-				// Fetch
+				fetch(
+					`https://rickandmortyapi.com/api/character?page=${page}`
+				)
+					.then(data => data.json())
+					.then(({ results }) => {
+						results.map(({ name, image }) => {
+							render(name, image);
+						});
+						page += 1;
+					});
 			}
 
 			obtenerData();
