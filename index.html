@@ -49,17 +49,15 @@
 				$lista.appendChild(card);
 			}
 
-			function obtenerData() {
-				fetch(
+			async function obtenerData() {
+				const data = await fetch(
 					`https://rickandmortyapi.com/api/character?page=${page}`
-				)
-					.then(data => data.json())
-					.then(({ results }) => {
-						results.map(({ name, image }) => {
-							render(name, image);
-						});
-						page += 1;
-					});
+				);
+				const { results } = await data.json();
+				results.map(({ name, image }) => {
+					render(name, image);
+				});
+				page += 1;
 			}
 
 			obtenerData();
