@@ -1,0 +1,55 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+	gap: 20px;
+	margin: 20px 50px;
+}
+
+.card {
+	height: auto;
+	width: 100%;
+	border-radius: 10px;
+	-webkit-box-shadow: 4px 27px 97px -43px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 4px 27px 97px -43px rgba(0, 0, 0, 0.75);
+	box-shadow: 4px 27px 97px -43px rgba(0, 0, 0, 0.75);
+}
+
+.card img {
+	border-radius: 10px 10px 0px 0px;
+	width: 100%;
+}
+
+.card h3 {
+	text-align: center;
+}
+
+button {
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid black;
+	outline: none;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+	transition: 450ms all;
+}
+
+button:hover {
+	background-color: black;
+	color: white;
+}
+
+.center {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.ocultar {
+	display: none;
+}
