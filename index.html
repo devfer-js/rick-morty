@@ -1,66 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Rick & Morty</title>
-		<link
-			href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="style.css" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-		/>
-	</head>
-	<body>
-		<h1>Personajes de Rick & Morty</h1>
-		<hr />
-		<section class="list" id="list"></section>
-		<div class="center">
-			<button id="boton">Agregar</button>
-		</div>
-		<script>
-			const $boton = document.getElementById('boton');
-			let page = 1;
-
-			$boton.addEventListener('click', obtenerData);
-
-			function render(name, imagen_URL) {
-				const $lista = document.getElementById('list');
-				const card = document.createElement('div');
-				// Imagen
-				const image = document.createElement('img');
-				image.src = imagen_URL;
-				image.alt = name;
-				// Nombre
-				const nombreCard = document.createElement('h3');
-				const texto = document.createTextNode(name);
-				nombreCard.appendChild(texto);
-
-				card.appendChild(image);
-				card.appendChild(nombreCard);
-				card.classList.add(
-					'card',
-					'animated',
-					'bounceInLeft',
-					'fast'
-				);
-				$lista.appendChild(card);
-			}
-
-			async function obtenerData() {
-				const data = await fetch(
-					`https://rickandmortyapi.com/api/character?page=${page}`
-				);
-				const { results } = await data.json();
-				results.map(({ name, image }) => {
-					render(name, image);
-				});
-				page += 1;
-			}
-
-			obtenerData();
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rick & Morty</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+  </head>
+  <body>
+    <h1>Personajes de Rick & Morty</h1>
+    <hr />
+    <section class="list" id="list"></section>
+    <div class="center">
+      <button id="boton">Agregar</button>
+    </div>
+    <script src="./main.ts"></script>
+  </body>
 </html>
